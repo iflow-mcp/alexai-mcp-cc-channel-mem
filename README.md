@@ -136,3 +136,8 @@ ANTHROPIC_API_KEY=               # curator.js Claude 큐레이션 (선택)
 - Node.js 20+, discord.js v14, node-telegram-bot-api
 - better-sqlite3 + FTS5, chokidar
 - @modelcontextprotocol/sdk
+
+## Contributors
+
+- **[Alex Lee](https://github.com/AlexAI-MCP)** — 기획, 설계, 아키텍처
+- **Claude Code (Anthropic)** — 구현, 오토리서치, 최적화

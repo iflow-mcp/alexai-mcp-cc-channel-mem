@@ -1,5 +1,9 @@
 # cc-channel-mem
 
+<p align="center">
+  <img src="logo.png" alt="CC ChannelMem Logo" width="480"/>
+</p>
+
 Discord/Telegram 서버 채널의 대화를 Claude Code 세션과 독립적으로 로컬에 영구 저장하고,
 다음 Claude Code 세션 시작 시 관련 메모리를 자동 주입하는 MCP 서버 + 백그라운드 데몬.
 

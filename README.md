@@ -141,5 +141,5 @@ ANTHROPIC_API_KEY=               # curator.js Claude 큐레이션 (선택)
 
 - **[Alex Lee](https://github.com/AlexAI-MCP)** — 기획, 설계, 아키텍처
 - **Claude Code (Anthropic)** — 구현, 오토리서치, 최적화
-- **Agent Forge** — 에이전트 프레임워크
-- **OpenCrab** — MetaOntology MCP 서버
+- **[Agent Forge](https://github.com/AlexAI-MCP/AgentForge)** — 에이전트 프레임워크
+- **[OpenCrab](https://github.com/AlexAI-MCP/OpenCrab)** — MetaOntology MCP 서버

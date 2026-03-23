@@ -157,7 +157,13 @@ async function measureSearchQuality() {
 
   let totalRR = 0;
   for (const tc of testCases) {
-    const safeQuery = tc.query.replace(/['"*()]/g, ' ').trim();
+    const safeQuery = tc.query
+      .replace(/['"()\-]/g, ' ')
+      .trim()
+      .split(/\s+/)
+      .filter(Boolean)
+      .map((t) => t + '*')
+      .join(' ');
     let rows = [];
     try {
       rows = db.prepare(`

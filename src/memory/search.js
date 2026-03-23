@@ -101,7 +101,13 @@ async function search(query, limit = 10) {
   let ftsRows = [];
   try {
     // Escape special FTS5 characters
-    const safeQuery = query.replace(/['"*()]/g, ' ').trim();
+    const safeQuery = query
+      .replace(/['"()\-]/g, ' ')
+      .trim()
+      .split(/\s+/)
+      .filter(Boolean)
+      .map((t) => t + '*')
+      .join(' ');
     if (safeQuery) {
       ftsRows = db.prepare(`
         SELECT c.id, c.date, c.platform, c.channel, c.author, c.content, c.embedding,

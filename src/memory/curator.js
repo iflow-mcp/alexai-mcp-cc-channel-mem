@@ -195,4 +195,4 @@ async function curate(date) {
   console.log(`[curator] updated MEMORY.md via rules (${newEntries.length} entries, ${targetDate})`);
 }
 
-module.exports = { curate };
+module.exports = { curate, extractFromLog, classifyContent };

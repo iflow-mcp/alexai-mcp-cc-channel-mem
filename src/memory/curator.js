@@ -28,7 +28,7 @@ const PREFERENCE_PATTERNS = [
 ];
 
 const PROJECT_PATTERNS = [
-  /프로젝트|작업|개발|구현|설계|모델링/,
+  /프로젝트|작업|개발|구현|설계|모델링|파트너십|계약|협력|검토|미팅|회의/,
 ];
 
 function classifyContent(content) {

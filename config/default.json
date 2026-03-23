@@ -1,0 +1,15 @@
+{
+  "telegram": {
+    "pollingInterval": 1000,
+    "pollingTimeout": 10
+  },
+  "memory": {
+    "chunkSize": 512,
+    "chunkOverlap": 64
+  },
+  "search": {
+    "vectorWeight": 0.6,
+    "keywordWeight": 0.4,
+    "defaultLimit": 10
+  }
+}

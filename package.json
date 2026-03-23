@@ -1,0 +1,33 @@
+{
+  "name": "cc-channel-mem",
+  "version": "0.1.0",
+  "description": "Discord/Telegram channel memory daemon + MCP server for Claude Code",
+  "main": "src/daemon/index.js",
+  "bin": {
+    "cc-channel-mem": "bin/cc-channel-mem.js"
+  },
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/daemon/index.js",
+    "test:writer": "node -e \"const {writeMessage}=require('./src/daemon/writer');writeMessage({platform:'discord',channelId:'123',channelName:'#test',authorId:'u1',authorName:'TestUser',content:'Hello from writer test',timestamp:new Date()}).then(()=>console.log('writer OK'))\""
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "better-sqlite3": "^12.8.0",
+    "chokidar": "^3.6.0",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5",
+    "node-telegram-bot-api": "^0.66.0"
+  },
+  "keywords": [
+    "claude-code",
+    "mcp",
+    "discord",
+    "telegram",
+    "memory"
+  ],
+  "license": "MIT"
+}

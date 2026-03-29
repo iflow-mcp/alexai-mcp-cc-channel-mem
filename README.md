@@ -46,7 +46,7 @@ cc-channel-mem status
 claude mcp add cc-channel-mem -- node /path/to/cc-channel-mem/src/mcp/index.js
 ```
 
-### 4. SessionStart Hook 등록 (선택, 자동 메모리 주입)
+### 4. SessionStart Hook 등록 (권장, 데몬 자동시작 + 메모리 주입)
 
 `~/.claude/settings.json` 에 추가:
 
@@ -55,10 +55,16 @@ claude mcp add cc-channel-mem -- node /path/to/cc-channel-mem/src/mcp/index.js
   "hooks": {
     "SessionStart": [{
       "matcher": "",
-      "hooks": [{
-        "type": "command",
-        "command": "/path/to/cc-channel-mem/hooks/session-start.sh"
-      }]
+      "hooks": [
+        {
+          "type": "command",
+          "command": "/path/to/cc-channel-mem/hooks/daemon-start.sh"
+        },
+        {
+          "type": "command",
+          "command": "/path/to/cc-channel-mem/hooks/session-start.sh"
+        }
+      ]
     }],
     "PreCompact": [{
       "matcher": "",
@@ -70,6 +76,14 @@ claude mcp add cc-channel-mem -- node /path/to/cc-channel-mem/src/mcp/index.js
   }
 }
 ```
+
+**hooks 파일 역할:**
+
+| 파일 | 설명 |
+|------|------|
+| `daemon-start.sh` | 세션 시작 시 데몬 자동 재시작. PID 체크 후 꺼져있으면 재시작, 살아있으면 스킵 |
+| `session-start.sh` | 오늘/어제 대화 요약 + 장기 메모리를 Claude 컨텍스트에 주입 |
+| `pre-compact.sh` | 컨텍스트 압축 전 현재 대화 저장 |
 
 ## CLI 명령
 

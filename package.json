@@ -1,10 +1,10 @@
 {
-  "name": "@iflow-mcp/AlexAI-MCP-cc-channel-mem",
+  "name": "@iflow-mcp/alexai-mcp-cc-channel-mem",
   "version": "0.1.0",
   "description": "Discord/Telegram channel memory daemon + MCP server for Claude Code",
   "main": "src/daemon/index.js",
   "bin": {
-    "iflow-mcp_AlexAI-MCP-cc-channel-mem": "src/mcp/index.js"
+    "iflow-mcp_alexai-mcp-cc-channel-mem": "src/mcp/index.js"
   },
   "type": "commonjs",
   "engines": {

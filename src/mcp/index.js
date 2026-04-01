@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 'use strict';
 
 require('dotenv').config({ path: require('path').join(require('os').homedir(), '.cc-channel-mem', '.env') });
